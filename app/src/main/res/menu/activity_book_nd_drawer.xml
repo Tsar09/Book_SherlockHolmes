@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_chapter1"
+            android:title="Chapter 1"
+            android:icon="@drawable/ic_menu_slideshow"/>
+        <item
+            android:id="@+id/nav_chapter2"
+            android:title="Chapter 2"
+            android:icon="@drawable/ic_menu_slideshow"/>
+        <item
+            android:id="@+id/nav_chapter3"
+            android:title="Chapter 3"
+            android:icon="@drawable/ic_menu_slideshow"/>
+    </group>
+            <item
+                android:id="@+id/nav_vocabulary"
+                android:title="Vocabulary"
+                android:icon="@drawable/ic_menu_gallery"/>
+</menu>

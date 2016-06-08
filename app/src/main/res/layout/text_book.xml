@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginTop="3dp"
+    android:layout_weight="1"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+    <include layout="@layout/header_book"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-16dp">
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="17dp"
+            android:background="@color/blacktheme_color"
+            android:paddingBottom="0dp"
+            android:paddingLeft="18dp"
+            android:paddingRight="18dp"
+            android:paddingTop="16dp">
+
+            <TextView
+                android:id="@+id/mainText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:lineSpacingMultiplier="1.5"
+                android:text="Large TextLarge Text Large Text Large Text Large Text  Large Text Large Text  "
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#edffffff"
+                android:textColorLink="#eef5f5f5"
+                android:textSize="18sp" />
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/chapter"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="top|center"
+            android:background="@drawable/shape_circle"
+            android:elegantTextHeight="false"
+            android:gravity="center"
+            android:text="1"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#FFFFFFFF"
+            android:typeface="serif" />
+    </FrameLayout>
+</LinearLayout>

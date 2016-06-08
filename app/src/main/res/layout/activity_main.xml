@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.tsar.bool_sherlokholmes.MainActivity"
+    android:baselineAligned="false"
+    android:id="@+id/layout">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/sherlock4"
+            android:visibility="visible"
+            android:background="@drawable/mysherlock" />
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/image"
+            android:layout_alignTop="@+id/image"
+            android:layout_alignRight="@+id/image"
+            android:layout_alignBottom="@+id/image"
+            android:layout_margin="1dp"
+            android:gravity="center"
+            android:text="The Adventure of Sherlock Holmes"
+            android:textColor="#363630"
+            android:autoText="false"
+            android:textSize="72dp"
+            android:visibility="gone"/>
+
+
+</RelativeLayout>

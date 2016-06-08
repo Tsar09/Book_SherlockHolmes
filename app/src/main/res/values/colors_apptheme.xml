@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="apptheme_color">#fbe9c1</color>
+    <color name="blacktheme_color">#ec000000</color>
+    <color name="my_blue_color">#033f40</color>
+</resources>

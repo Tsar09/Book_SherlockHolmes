@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">The Scandal in Bohemia</string>
+    <string name="header_text">The Scandal in Bohemia</string>
+    <string name="title_activity_book_nd">BookND</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+</resources>
