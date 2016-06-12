@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.tsar.bool_sherlokholmes.MainActivity"
+    tools:context="com.example.tsar.booksherlockholmes.MainActivity"
     android:baselineAligned="false"
     android:id="@+id/layout">
 
