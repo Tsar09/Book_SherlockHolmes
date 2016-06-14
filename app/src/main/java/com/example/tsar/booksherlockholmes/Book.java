@@ -44,11 +44,12 @@ public class Book extends Activity
         myMediaPlayer = new MyMediaPlayer(this, seekbar, play, pause);
         readDataBase = new ReadDataBase(this, "SherlockHolmesDB.db", "data.db");
 
-        words= new Words(this);
-        words.insertWord("1");
+       // words= new Words(this);
+       // words.insertWord("1");
         //words.insertWord("2");
         //words.insertWord("3");
         //words.insertWord("55555");
+
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
@@ -182,16 +183,16 @@ public class Book extends Activity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-//        if (id == R.id.nav_vocabulary) {
-//
-//            HistoryDBHelper db = new HistoryDBHelper(this);
-//          //  db.insertWord("thee", Integer.parseInt(String.valueOf(tv_chapter.getText())));
+        if (id == R.id.nav_vocabulary) {
+
+//            DBHelper db = new DBHelper(this);
+//            db.insertWord("thee");
 //
 //            ArrayList<String> list= db.getAllWords();
 //            mainText.setText(list.get(0));
 //            for (int i = 1; i< list.size(); i++){
 //                mainText.append(list.get(i));
-//            }
+            }
 
 
         if (id == R.id.nav_chapter1) {

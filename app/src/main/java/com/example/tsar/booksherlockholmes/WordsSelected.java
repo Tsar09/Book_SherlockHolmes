@@ -8,8 +8,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.example.tsar.booksherlockholmes.Data.HistoryDBHelper;
-
 /**
  * Created by tsar on 27.02.2016.
  */
@@ -41,8 +39,8 @@ public class WordsSelected implements ActionMode.Callback {
         SpannableStringBuilder ssb = new SpannableStringBuilder(textView.getText());
         ssb.subSequence(start,end);
 
-        HistoryDBHelper dbHelper = new HistoryDBHelper(context);
-        dbHelper.insertWord(ssb.toString(), 0);
+      //  DBHelper dbHelper = new DBHelper(context);
+      //  dbHelper.insertWord(ssb.toString());
         return true;
     }
 
