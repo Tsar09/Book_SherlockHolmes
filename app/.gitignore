@@ -37,7 +37,6 @@ build/
 *.vssscc
 .builds
 *.pidb
-*.log
 *.scc
 
 # Visual C++ cache files
@@ -156,7 +155,6 @@ $RECYCLE.BIN/
 *.egg
 *.egg-info
 dist/
-build/
 eggs/
 parts/
 var/
@@ -312,3 +310,18 @@ proguard/
 
 # Windows clutter
 Thumbs.db
+/hs_err_pid1564.log
+/replay_pid4100.log
+/hs_err_pid2128.log
+/hs_err_pid1408.log
+/replay_pid2220.log
+/null
+/replay_pid1408.log
+/replay_pid3388.log
+/replay_pid4948.log
+/hs_err_pid4948.log
+/hs_err_pid3388.log
+/hs_err_pid4100.log
+/hs_err_pid4728.log
+/proguard-rules.pro
+/hs_err_pid2220.log

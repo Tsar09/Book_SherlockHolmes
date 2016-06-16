@@ -350,3 +350,17 @@ proguard/
 
 # Windows clutter
 Thumbs.db
+/app/proguard-rules.pro
+/app/hs_err_pid1408.log
+/app/hs_err_pid2220.log
+/app/replay_pid3388.log
+/app/replay_pid1408.log
+/app/replay_pid2220.log
+/app/hs_err_pid4948.log
+/app/replay_pid4100.log
+/app/hs_err_pid2128.log
+/app/hs_err_pid4100.log
+/app/replay_pid4948.log
+/app/hs_err_pid3388.log
+/app/hs_err_pid4728.log
+/app/hs_err_pid1564.log
