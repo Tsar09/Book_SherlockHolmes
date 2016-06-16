@@ -1,30 +1,25 @@
 package com.example.tsar.booksherlockholmes;
 
+import android.app.ProgressDialog;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
-import org.json.simple.parser.ParseException;
-
-import java.io.IOException;
-import java.security.KeyManagementException;
-import java.security.NoSuchAlgorithmException;
-
 public class Dictionary extends AppCompatActivity {
     final Uri WORDS_URI = Uri.parse("content://com.example.tsar.booksherlockholmes/words");
-    final String WORD = "words";
+    YandexTranslate translator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,41 +58,76 @@ public class Dictionary extends AppCompatActivity {
         lvWords.setAdapter(adapter);
 
     }
-    public void onClickInsert(View v){
-        ContentValues cv = new ContentValues();
-        String s = "hi";
-        String t = new String();
-        if(isOnline()) {
-            try {
-                t = YandexTranslate.translate(s, "en", "ru");
-            } catch (IOException e) {
-                Log.d("MyLog", "Insert IOException");
-                e.printStackTrace();
-            } catch (ParseException e) {
-                Log.d("MyLog", "Insert ParseException");
-                e.printStackTrace();
-            } catch (NoSuchAlgorithmException e) {
-                Log.d("MyLog", "Insert NoSuchAlgorithmException");
-                e.printStackTrace();
-            } catch (KeyManagementException e) {
-                Log.d("MyLog", "Insert KeyManagementException");
-                e.printStackTrace();
-            } catch (Exception e) {
-                Log.d("MyLog", "Insert Exception");
-                e.printStackTrace();
-            }
-        }
-        cv.put("word",s);
-        cv.put("translate", t);
-        Uri newUri = getContentResolver().insert(WORDS_URI, cv);
-        Log.d("MyLog", "insert " + newUri.toString());
+
+    public void onClickInsert(View v) throws Exception {
+
+        new Translate().execute();
     }
 
     //доступен ли интернет
-    public boolean isOnline(){
+    public boolean isOnline() {
         ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         return (networkInfo != null && networkInfo.isConnected());
     }
 
+    private class Translate extends AsyncTask<Void, Void, Void> {
+        private ProgressDialog progress = null;
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            try {
+                translator = new YandexTranslate(ApiKeys.YANDEX_API_KEY);
+                Thread.sleep(1000);
+                translated();
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onCancelled() {
+            super.onCancelled();
+        }
+
+        @Override
+        protected void onPreExecute() {
+            progress = ProgressDialog.show(Dictionary.this, null, "Translating...");
+            progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+            progress.setIndeterminate(true);
+            super.onPreExecute();
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            progress.dismiss();
+
+            try {
+                translated();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            super.onPostExecute(aVoid);
+        }
+
+        @Override
+        protected void onProgressUpdate(Void... values) {
+            super.onProgressUpdate(values);
+        }
+    }
+
+    public void translated() {
+        ContentValues cv = new ContentValues();
+        String translatetotaglog = "sherlock";
+        String text2 = new String();
+        text2 = translator.translate(translatetotaglog, "en", "ru");
+
+        cv.put("word", translatetotaglog);
+        cv.put("translate", text2);
+        getContentResolver().insert(WORDS_URI, cv);
+
+    }
 }
+
+
